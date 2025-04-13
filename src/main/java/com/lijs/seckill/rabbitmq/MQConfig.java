@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Configuration;
 public class MQConfig {
 
     public static final String QUEUE = "queue";
+
+    /**
+     * 声明秒杀队列 seckill.queue
+     */
     public static final String SECKILL = "seckill.queue";
 
     /**
@@ -18,6 +22,6 @@ public class MQConfig {
     @Bean
     public Queue queue() {
         // 参数：队列名称，是否持久化（true）
-        return new Queue(QUEUE, true);
+        return new Queue(SECKILL, true);
     }
 }
